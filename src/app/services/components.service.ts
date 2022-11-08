@@ -46,5 +46,29 @@ export class ComponentsService {
   deletePayment(val:any){
     return this.http.delete(this.baseApiUrl+'/Payments/'+val);
   }
+  getWorkingHoursList():Observable<any[]>{
+    return this.http.get<any>(this.baseApiUrl+'/WorkingHours/Read');
+  }
+  addWorkingHours(val:any){
+    return this.http.post(this.baseApiUrl+'/WorkingHours/Post',val)
+  }
+  updateWorkingHours(val1:any,val:any){
+    return this.http.put(this.baseApiUrl+'/WorkingHours/'+val1,val)
+  }
+  deleteWorkingHours(val:any){
+    return this.http.delete(this.baseApiUrl+'/WorkingHours/'+val);
+  }
+  getLeavesList():Observable<any[]>{
+    return this.http.get<any>(this.baseApiUrl+'/Leaves/Read');
+  }
+  addLeaveRequest(val:any){
+    return this.http.post(this.baseApiUrl+'/Leaves/Post',val)
+  }
+  updateLeaveRequest(val1:any,val:any){
+    return this.http.put(this.baseApiUrl+'/Leaves/'+val1,val)
+  }
+  deleteLeaveRequest(val:any){
+    return this.http.delete(this.baseApiUrl+'/Leaves/'+val);
+  }
 }
 

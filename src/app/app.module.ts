@@ -20,6 +20,12 @@ import { ShowEmpComponent } from './Component/employee/show-emp/show-emp.compone
 import { AddUpdateEmpComponent } from './Component/employee/add-update-emp/add-update-emp.component';
 import { ShowPaymentsComponent } from './Component/payments/show-payments/show-payments.component';
 import { AddUpdatePaymentsComponent } from './Component/payments/add-update-payments/add-update-payments.component';
+import { ShowWorkinghoursComponent } from './Component/workinghours/show-workinghours/show-workinghours.component';
+import { AddUpdateWorkinghoursComponent } from './Component/workinghours/add-update-workinghours/add-update-workinghours.component';
+import { AddUpdateLeavesComponent } from './Component/leaves/add-update-leaves/add-update-leaves.component';
+import { ShowLeavesComponent } from './Component/leaves/show-leaves/show-leaves.component';
+import { Login1Component } from './Component/login1/login1.component';
+import { Registration1Component } from './Component/registration1/registration1.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +36,9 @@ import { AddUpdatePaymentsComponent } from './Component/payments/add-update-paym
     ShowDesigComponent,
     AddUpdateDesignComponent,
     LeavesComponent,PaymentsComponent
-    ,WorkinghoursComponent, ShowEmpComponent, AddUpdateEmpComponent, ShowPaymentsComponent, AddUpdatePaymentsComponent
+    ,WorkinghoursComponent, ShowEmpComponent, AddUpdateEmpComponent,
+     ShowPaymentsComponent, AddUpdatePaymentsComponent, 
+     ShowWorkinghoursComponent, AddUpdateWorkinghoursComponent, AddUpdateLeavesComponent, ShowLeavesComponent, Login1Component, Registration1Component
   ],
   imports: [
     BrowserModule,

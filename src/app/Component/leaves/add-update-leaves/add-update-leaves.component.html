@@ -1,0 +1,42 @@
+<p>add-update-leaves works!</p>
+<p>add-update-emp works!</p>
+<div class="form-froup row">
+    <label class="col-sm-2 col-form-label">LeaveType</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="leaveType"
+        placeholder="Enter LeaveType">
+    </div>
+    <label class="col-sm-2 col-form-label">StartDate</label>
+    <div class="col-sm-10">
+        <input type="datetime-local" class="form-control" [(ngModel)]="startDate"
+        placeholder="Enter StartDate">
+    </div>
+    <label class="col-sm-2 col-form-label">EndDate</label>
+    <div class="col-sm-10">
+        <input type="datetime-local" class="form-control" [(ngModel)]="endDate"
+        placeholder="Enter EndDate">
+    </div>
+    <label class="col-sm-2 col-form-label">EmployeeId</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="employeeId"
+        placeholder="Enter EmployeeId">
+    </div>
+    <!-- <label class="col-sm-2 col-form-label">createdDate</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="phoneNo"
+        placeholder="Enter Role">
+    </div> -->
+    <label class="col-sm-2 col-form-label">LeaveReason</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="leaveReason"
+        placeholder="Enter LeaveReason">
+    </div>
+    </div>
+    <button (click)="addLeave()" *ngIf="leaves.employeeId==0" class="btn btn-primary">
+     Add
+    </button>
+    <button (click)="updateLeave()" *ngIf="leaves.employeeId!=0" class="btn btn-primary">
+        Update
+       </button>
+
+
