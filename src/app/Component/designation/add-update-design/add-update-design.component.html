@@ -1,0 +1,29 @@
+<p>add-update-design works!</p>
+<div class="form-froup row">
+    <!-- <label class="col-sm-2 col-form-label">DesignationName</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="designationName"
+        placeholder="Enter Designation Name">
+    </div> -->
+    <label class="col-sm-2 col-form-label">DesignationName</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="designationName"
+        placeholder="Enter Designation Name">
+    </div>
+    <label class="col-sm-2 col-form-label">Role</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="role"
+        placeholder="Enter Role">
+    </div>
+    <label class="col-sm-2 col-form-label">DepartmentName</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="departmentName"
+        placeholder="Enter Department Name">
+    </div>
+    </div>
+    <button (click)="addDesig()" *ngIf="dep.designationName==0" class="btn btn-primary">
+     Add
+    </button>
+    <button (click)="UpdateDesig()" *ngIf="dep.designationName!=0" class="btn btn-primary">
+        Update
+       </button>
