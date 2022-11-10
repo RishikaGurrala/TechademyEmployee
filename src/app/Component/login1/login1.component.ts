@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class Login1Component implements OnInit {
   isUserValid:boolean=false;
-  constructor(private service:UserService) { }
+  constructor(private service:UserService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -27,17 +28,17 @@ export class Login1Component implements OnInit {
   loginSubmitted(){
     this.service.loginUser1([this.loginForm.value?.userName!,
       this.loginForm.value.pwd!]).subscribe(res=>{
-        if(res=="Login Succesfull"){
+        if(res=="Login Failed"){
+          this.isUserValid=false;
+          alert("Login unsuccessfull");;
+          
+        }else {
+          
           this.isUserValid=true;
-          alert("Login successfull");
-        }else if(res=="Login Failed"){
-          this.isUserValid=false;
-          alert("Login unsuccessfull");
+          this.service.setToken(res);
+          this.router.navigateByUrl('home');
         }
-        else{
-          this.isUserValid=false;
-          alert("Something went wrong");
-        }
+        
       });
   }
 

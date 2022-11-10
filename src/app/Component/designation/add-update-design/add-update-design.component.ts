@@ -23,7 +23,9 @@ export class AddUpdateDesignComponent implements OnInit {
     role:this.role,
 departmentName:this.departmentName  };
     this.desig.addDesig(val).subscribe(res=>{
-      alert(res.toString());
+      if(res=="Designation Inserted Successfully"){
+      alert("Added succesfull");
+      }
     });
   }
   UpdateDesig(){
@@ -33,7 +35,15 @@ departmentName:this.departmentName  };
       Role:this.role,
   departmentName:this.departmentName};
       this.desig.updateDesig(this.designationName,val).subscribe(res=>{
-        alert(res.toString());
+        if(res=="Designation updation sussessfull"){
+        alert("Updation Succesfull");
+        }
+        else if(res=="Designation updation failed"){
+          alert("Updation Failed");
+        }
+        else{
+          alert("Something went wrong");
+        }
       });
   }
 

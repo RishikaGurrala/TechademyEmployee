@@ -1,4 +1,4 @@
-<form class="border p-3 rounded-3" [formGroup]="loginForm" (ngSubmit)="loginSubmitted()">
+<form class="border p-3 rounded-3 container" [formGroup]="loginForm" (ngSubmit)="loginSubmitted()">
     <div class="row g-0">
         <div class="col text-center p-2 mb-3 bg-light">
           <span class="fs-3">Login</span>
@@ -37,6 +37,11 @@
             <div class="d-grid">
              <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Login</button>
             </div>
+        </div>
+    </div>
+    <div class="row">   
+        <div class="col mt-3">
+            <span class="me-2">New User?</span><a routerLink="/registration">Register Here</a>
         </div>
     </div>
 

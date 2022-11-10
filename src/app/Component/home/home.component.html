@@ -1,0 +1,58 @@
+
+    <div class="container">
+        <nav class="navbar navbar-expand-sm bg-light navbar-dark">
+          <ul class="navbar nav">
+              <li class="nav-item">
+                  <button routerLink="/designation"
+                    class="m1 btn btn-light btn-outline-primary" Button>Designations
+                  </button>
+              </li>
+              <li class="nav-item">
+                <button routerLink="/employee"
+                  class="m1 btn btn-light btn-outline-primary " Button>Employees
+                </button>
+            </li>
+            <li class="nav-item">
+              <button routerLink="/workinghours"
+                class="m1 btn btn-light btn-outline-primary " Button>Working Hours
+              </button>
+          </li>
+          <li class="nav-item">
+            <button routerLink="/leaves"
+              class="m1 btn btn-light btn-outline-primary " Button>LeaveRequest
+            </button>
+        </li>
+            <li class="nav-item">
+                <button routerLink="/payment"
+                  class="m1 btn btn-light btn-outline-primary " Button>Payment Rules
+                </button>
+            </li>
+            <!-- <li class="nav-item">
+                <button routerLink="login"
+                  class="m1 btn btn-light btn-outline-primary float-left" Button>Login
+                </button>
+            </li>
+            <li class="nav-item">
+                <button routerLink="register"
+                  class="m1 btn btn-light btn-outline-primary" Button>Register
+                </button>
+            </li> -->
+            <!-- <li class="nav-item">
+              <button routerLink="registration"
+                class="m1 btn btn-light btn-outline-primary" Button>Register
+              </button>
+          </li>
+          <li class="nav-item">
+            <button routerLink="login1"
+              class="m1 btn btn-light btn-outline-primary" Button>Login
+            </button>
+        </li> -->
+      
+          </ul>
+          <button class="btn btn-primary" (click)="logout()">Log Out</button>
+        </nav> 
+        
+        <div class="d-flex justify-content-center">Welcome to Employee Management Portal</div>
+      <router-outlet></router-outlet>
+       </div> 
+

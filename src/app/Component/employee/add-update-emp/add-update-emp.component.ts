@@ -45,7 +45,16 @@ export class AddUpdateEmpComponent implements OnInit {
             designationName:this.designationName};
 
     this.service.addEmployee(val).subscribe(res=>{
-      alert(res.toString());
+      if(res=="Employee Inserted Successfully"){
+        alert("Employee Added succesfully");
+        }else if(res=="There is no such Designation Exists"){
+          alert("No such Designation Exists");
+        }else if(res=="Employee Insertion Failed"){
+          alert("Insertion Failed");
+        }
+        else{
+          alert("Something went wrong");
+        }
     });
   }
 
@@ -58,8 +67,19 @@ export class AddUpdateEmpComponent implements OnInit {
               createdDate:this.createdDate,
             designationName:this.designationName};
 
-    this.service.updateEmployee(this.employeeId,val).subscribe(res=>{
-    alert(res.toString());
+    this.service.updateEmployee(this.emp.employeeId,val).subscribe(res=>{
+    if(res=="updation sussessfull"){
+        alert("Updation Succesfull");
+        }
+        else if(res=="The designation is not in the list of designation choose other and try again"){
+          alert("No such designation exists");
+        }else if(res=="updation failed"){
+          alert("Updation Failed");
+        }
+        else{
+          alert("Something went wrong");
+          
+        }
     });
   }
   refreshDesigList(){

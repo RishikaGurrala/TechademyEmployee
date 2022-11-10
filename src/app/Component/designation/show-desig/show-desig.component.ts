@@ -38,8 +38,18 @@ export class ShowDesigComponent implements OnInit {
   deleteClick(item:any){
     if(confirm('Are you sure??')){
       this.desig.deleteDesig(item.designationName).subscribe(data=>{
-        alert(data.toString());
+        if(data=="Designation deleted successfully"){
+        alert("Designation Deleted");
         this.refreshDesigList();
+        }
+        else if(data=="Designation deletion failed"){
+          alert("Designation Deletion failed");
+          this.refreshDesigList();
+        }
+        else{
+          alert("Something went wrong");
+        }
+        
       })
     }
   }

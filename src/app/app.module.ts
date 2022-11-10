@@ -26,6 +26,7 @@ import { AddUpdateLeavesComponent } from './Component/leaves/add-update-leaves/a
 import { ShowLeavesComponent } from './Component/leaves/show-leaves/show-leaves.component';
 import { Login1Component } from './Component/login1/login1.component';
 import { Registration1Component } from './Component/registration1/registration1.component';
+import { HomeComponent } from './Component/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,7 @@ import { Registration1Component } from './Component/registration1/registration1.
     LeavesComponent,PaymentsComponent
     ,WorkinghoursComponent, ShowEmpComponent, AddUpdateEmpComponent,
      ShowPaymentsComponent, AddUpdatePaymentsComponent, 
-     ShowWorkinghoursComponent, AddUpdateWorkinghoursComponent, AddUpdateLeavesComponent, ShowLeavesComponent, Login1Component, Registration1Component
+     ShowWorkinghoursComponent, AddUpdateWorkinghoursComponent, AddUpdateLeavesComponent, ShowLeavesComponent, Login1Component, Registration1Component, HomeComponent
   ],
   imports: [
     BrowserModule,

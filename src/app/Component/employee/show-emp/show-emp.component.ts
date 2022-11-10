@@ -42,8 +42,18 @@ export class ShowEmpComponent implements OnInit {
   deleteClick(item:any){
     if(confirm('Are you sure??')){
       this.empl.deleteEmployee(item.employeeId).subscribe(data=>{
-        alert(data.toString());
+        if(data=="Employee deleted successfully"){
+          alert("Employee Deleted");
+          this.refreshEmpList();
+          }
+          else if(data=="Employee deletion failed"){
+            alert("EmployeeDeletion failed");
+            this.refreshEmpList();
+          }
+          else{
+            alert("Something went wrong");
         this.refreshEmpList();
+          }
       })
     }
   }

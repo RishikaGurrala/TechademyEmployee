@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +12,12 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
   baseApiUrl:string=environment.baseUrl;
+  currentUser:BehaviorSubject<any>=new BehaviorSubject(null);
+  jwtHelperService=new JwtHelperService();
+  setToken(token:string){
+    localStorage.setItem("access_token",token);
+    this.loadCurrentUser();
+  } 
   registerUser1(user1:Array<String>){
     // const headers={
     //   'access-Control-Allow-Headers':'Accept',
@@ -77,6 +85,28 @@ export class UserService {
       responseType:"text"//  headers
     }
     );
+  }
+  loadCurrentUser(){
+    const token=localStorage.getItem("access_token");
+    const userInfo=token != null? this.jwtHelperService.decodeToken(token): null;
+    // const data=userInfo? {
+    //   id:userInfo.id,
+    //   name:userInfo.name,
+    //   userName:userInfo.username,
+    //   mobile:userInfo.mobile,
+    //   email:userInfo.email,
+    //   address:userInfo.address,
+    //   gender:userInfo.gender,
+    // }:null;
+    // this.currentUser.next(data);
+    console.log(userInfo);
+  }
+  removeToken(){
+     localStorage.removeItem("access_token");
+  }
+  isLoggedin():boolean{
+    return localStorage.getItem("access_token")?true:false;
+
   }
  
 }
